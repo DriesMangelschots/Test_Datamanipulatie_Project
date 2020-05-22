@@ -1,0 +1,365 @@
+﻿<Window x:Class="LeagueOfLegends.FAQ"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LeagueOfLegends"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="FAQ" Height="620" Width="600" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <!--Animatie uitschiuven menu-->
+        <Storyboard x:Key="KeyMenuOpen">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="GridMenu" Storyboard.TargetProperty="(FrameworkElement.Width)">
+                <EasingDoubleKeyFrame KeyTime="0" Value="60"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <!--Animatie terug treken menu-->
+        <Storyboard x:Key="KeyMenuClose">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="GridMenu" Storyboard.TargetProperty="(FrameworkElement.Width)">
+                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="60"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+
+    <Window.Triggers >
+        <!--Trigger van het openen menu-->
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="BtnOpenMenu">
+            <BeginStoryboard Storyboard="{StaticResource KeyMenuOpen}"/>
+        </EventTrigger>
+
+        <!--Triger sluiten van het menu-->
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="BtnCloseMenu">
+            <BeginStoryboard Storyboard="{StaticResource KeyMenuClose}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid Background="#FF26E409">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="64*"/>
+            <ColumnDefinition Width="333*"/>
+        </Grid.ColumnDefinitions>
+
+        <DockPanel Grid.ColumnSpan="2" Margin="0,0,-0.4,0">
+            <Grid DockPanel.Dock="Left" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#FF077410" Margin="0,0,0,0.4">
+                <StackPanel>
+                    <!--Code 3 bolletjes Links Boven met knoppen-->
+                    <Grid Height="61" Background="#FF077410" RenderTransformOrigin="0.491,0.536">
+                        <Button x:Name="BtnCloseMenu" Click="BtnCloseMenu_Click" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right">
+                            <materialDesign:PackIcon Foreground="White" Kind="ArrowLeft" Width="25" Height="25" VerticalAlignment="Top" HorizontalAlignment="Right" />
+                        </Button>
+
+                        <Button x:Name="BtnOpenMenu" Click="BtnOpenMenu_Click" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,1,0,0" >
+                            <materialDesign:PackIcon Background="#FF077410" Foreground="White" Kind="Menu" Width="25" Height="25" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+                        </Button>
+                    </Grid>
+                    <!--Knop1-->
+                    <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled"  Foreground="White">
+                        <ListViewItem Height="75">
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="BtnHomeIcon" Click="BtnHomeIcon_Click" Height="53" Width="53" Background="{x:Null}" BorderBrush="{x:Null}">
+                                    <materialDesign:PackIcon HorizontalAlignment="Center" Background="{x:Null}" Kind="House" Foreground="White" Width="24" Height="25" RenderTransformOrigin="0.422,0.494"/>
+                                </Button>
+                                <Button x:Name="BtnHomeText" Click="BtnHomeText_Click" Content="Home" Height="53" Width="139" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                            </StackPanel>
+                        </ListViewItem>
+
+                        <!--Knop2-->
+                        <ListViewItem Height="75">
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="BtnSkinStoreIcon" Click="BtnSkinStoreIcon_Click" Height="53" Width="53" Background="{x:Null}" BorderBrush="{x:Null}">
+                                    <materialDesign:PackIcon HorizontalAlignment="Center" Background="{x:Null}" Kind="Wardrobe" Foreground="White" Width="24" Height="25" RenderTransformOrigin="0.422,0.494"/>
+                                </Button>
+                                <Button x:Name="BtnSkinStoreText" Click="BtnSkinStoreText_Click" Content="Skin Store" Height="53" Width="139" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                            </StackPanel>
+                        </ListViewItem>
+
+                        <!--Knop 3-->
+                        <ListViewItem Height="75">
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="BtnChampionStoreIcon" Click="BtnChampionStoreIcon_Click" Height="53" Width="53" Background="{x:Null}" BorderBrush="{x:Null}">
+                                    <materialDesign:PackIcon HorizontalAlignment="Center" Background="{x:Null}" Kind="man" Foreground="White" Width="24" Height="25" RenderTransformOrigin="0.422,0.494"/>
+                                </Button>
+                                <Button x:Name="BtnChampionStoreText" Click="BtnChampionStoreText_Click" Content="Champion Store" Height="53" Width="139" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                            </StackPanel>
+                        </ListViewItem>
+
+                        <!--Knop 4-->
+                        <ListViewItem Height="75">
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="BtnFreinsListIcon" Click="BtnFreinsListIcon_Click" Height="53" Width="53" Background="{x:Null}" BorderBrush="{x:Null}">
+                                    <materialDesign:PackIcon HorizontalAlignment="Center" Background="{x:Null}" Kind="People" Foreground="White" Width="24" Height="25" RenderTransformOrigin="0.422,0.494"/>
+                                </Button>
+                                <Button x:Name="BtnFreindsText" Click="BtnFreindsText_Click" Content="Freind List" Height="53" Width="139" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                            </StackPanel>
+                        </ListViewItem>
+
+                        <!--Knop5-->
+                        <ListViewItem Height="75">
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="BtnPreBuildsIcon" Click="BtnPreBuildsIcon_Click" Height="53" Width="53" Background="{x:Null}" BorderBrush="{x:Null}">
+                                    <materialDesign:PackIcon HorizontalAlignment="Center" Background="{x:Null}" Kind="Build" Foreground="White" Width="24" Height="25" RenderTransformOrigin="0.422,0.494"/>
+                                </Button>
+                                <Button x:Name="BtnBrebuildsText" Click="BtnBrebuildsText_Click" Content="Pre Builds" Height="53" Width="139" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                            </StackPanel>
+                        </ListViewItem>
+
+                        <!--Knop6-->
+                        <ListViewItem Height="75">
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="BtnMatchHistoryIcon" Click="BtnMatchHistoryIcon_Click" Height="53" Width="53" Background="{x:Null}" BorderBrush="{x:Null}">
+                                    <materialDesign:PackIcon HorizontalAlignment="Center" Background="{x:Null}" Kind="History" Foreground="White" Width="24" Height="25" RenderTransformOrigin="0.422,0.494"/>
+                                </Button>
+                                <Button x:Name="BtnMatchHistoryText" Click="BtnMatchHistoryText_Click" Content="Match History" Height="53" Width="139" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                            </StackPanel>
+                        </ListViewItem>
+                    </ListView>
+                </StackPanel>
+            </Grid>
+            
+            <!--Code Titel boven aan-->
+            <Grid DockPanel.Dock="Top" Height="60" VerticalAlignment="Top" Background="#FF26E409" Margin="0,0,5.6,0">
+                <TextBlock
+                Text="FAQ" 
+                FontSize="25"
+                FontFamily="MV Boli"
+                VerticalAlignment="Center"
+                Width="auto"
+                HorizontalAlignment="Center"/>
+                <StackPanel  VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Right">
+
+                    <materialDesign:PopupBox Margin="10" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
+                        <StackPanel Width="150">
+                            <Button x:Name="btnFaq" Click="BtnFaq_Click" Content="FAQ"/>
+                            <Separator/>
+                            <Button x:Name="BtnLogOut" Content="Log Out" Click="BtnLogOut_Click"/>
+                        </StackPanel>
+                    </materialDesign:PopupBox>
+                </StackPanel>
+
+
+            </Grid>
+
+
+            <!--Code Tekst-->
+            <ScrollViewer Margin="0,-1,0,0.4" Background="#FFF1F1F1">
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <StackPanel Margin="60,60,-27.4,-0.6" Background="#FFF1F1F1">
+                        <Expander
+                    HorizontalAlignment="Stretch"
+                    Background="#FFF1F1F1"
+                    Header="Why do we have champion updates?" Margin="0,0,33.2,0">
+                            <StackPanel
+                        Orientation="Vertical"
+                        TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
+                        Margin="24,8,24,16">
+                                <TextBlock
+                        Foreground="#FF000000"
+                        Text="A champion update is a graphical or kit (play style) update that occurs after a champion's initial release. Over the past year, our teams have been working on updating champions whose visuals or gameplay don't fit with the current state of the game. Our goal is to level up any outdated visuals or gameplay to make them feel fresh while still retaining what makes them unique as a champion."
+                        TextWrapping="Wrap" />
+                            </StackPanel>
+                        </Expander>
+
+                        <Border
+                    Background="{DynamicResource MaterialDesignDivider}"                
+                    Width="auto"
+                    Height="1"
+                    HorizontalAlignment="Stretch"
+                    SnapsToDevicePixels="True" />
+
+                        <Expander
+                HorizontalAlignment="Stretch"
+                Background="#FFF1F1F1"
+                Header="Unlocking game modes" Margin="0,0,33.2,0">
+                            <StackPanel
+                    Orientation="Vertical"
+                    TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
+                    Margin="24,8,24,16">
+                                <TextBlock
+                    
+                    Text="We've implemented a system for new Summoners to unlock various game modes as they progress. At first, you will be able to participate in Co-op Vs. AI matches on Summoner's Rift and Custom games to get a better feel for the game.You'll have access to Teamfight Tactics (TFT) from the very beginning at level 1 as well. As you gain levels, more maps and game modes will become available to you:"
+                    TextWrapping="Wrap" />
+                                <ListView>
+                                    <ListViewItem>
+                                        - Normal 5v5 Summoner's Rift (Blind Pick) will open up at level 3.
+                                    </ListViewItem>
+                                    <ListViewItem >
+                                        - ARAM 5v5 Howling Abyss will open up at level 3.
+                                    </ListViewItem>
+                                    <ListViewItem>
+                                        - Co-op vs. AI 3v3 Twisted Treeline will open up at level 5.
+                                    </ListViewItem>
+                                    <ListViewItem>
+                                        - Normal 3v3 Twisted Treeline will open up at level 7.
+                                    </ListViewItem>
+                                    <ListViewItem>
+                                        - Practice Tool will open at level 9.
+                                    </ListViewItem>
+                                    <ListViewItem>
+                                        - Normal 5v5 Summoner's Rift (Draft) will open up at level 10 and when you have at least 20 champions available.
+                                    </ListViewItem>
+                                    <ListViewItem >
+                                        - Ranked Solo/Duo and Ranked Flex queues for 5v5 Summoner's Rift will open at level 30 and when you acquire at least 20 champions.
+                                    </ListViewItem>
+                                    <ListViewItem>
+                                        - Ranked Flex 3v3 Twisted Treeline will open at level 30, once you acquire at least 12 champions.
+                                    </ListViewItem>
+                                </ListView>
+                            </StackPanel>
+                        </Expander>
+
+                        <Border
+                    Background="{DynamicResource MaterialDesignDivider}"                
+                    Width="auto"
+                    Height="1"
+                    HorizontalAlignment="Stretch"
+                    SnapsToDevicePixels="True" />
+
+                        <Expander
+                HorizontalAlignment="Stretch"
+                Background="#FFF1F1F1"
+                Header="What is the difference between my Riot Account and my Summoner name?" Margin="0,0,33.2,0">
+                            <StackPanel
+                    Orientation="Vertical"
+                    TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
+                    Margin="24,8,24,16">
+                                <TextBlock
+                    Opacity=".68"
+                    Text="Your Riot Account name is what  you use to log into your account, both on the website and in-client. No one is able to view this name except for you, and therefore it is important to keep this private. Your Riot Account name must be globally unique, meaning you're the only one in the world with that name. If you want to learn more about Riot Accounts, check out this article. Your Summoner Name is what your friends will see in-game. This is the name that you will be known by on screen and in your friends' friends lists. Unlike your Riot Account username, your Summoner Name can be changed whenever you like. This change will not affect your username or the way you log in."
+                    TextWrapping="Wrap" />
+                            </StackPanel>
+                        </Expander>
+
+                        <Border
+                    Background="{DynamicResource MaterialDesignDivider}"                
+                    Width="auto"
+                   Height="1"
+                    HorizontalAlignment="Stretch"
+                    SnapsToDevicePixels="True" />
+
+                        <Expander
+                HorizontalAlignment="Stretch"
+                Background="#FFF1F1F1"
+                Header="How much does a Summoner Name change cost?" Margin="0,0,33.2,0">
+                            <StackPanel
+                    Orientation="Vertical"
+                    TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
+                    Margin="24,8,24,16">
+                                <TextBlock
+                    
+                    Text="Name changes are available for 1300 RP or 13,900 BE."
+                    TextWrapping="Wrap" />
+                            </StackPanel>
+                        </Expander>
+
+                        <Border
+                    Background="{DynamicResource MaterialDesignDivider}"                
+                    Width="auto"
+                   Height="1"
+                    HorizontalAlignment="Stretch"
+                    SnapsToDevicePixels="True" />
+                        <Expander
+                HorizontalAlignment="Stretch"
+                Background="#FFF1F1F1"
+                Header="CAN I HAVE A SPECIAL CHARACTER IN MY SUMMONER NAME?" Margin="0,0,33.2,0">
+                            <StackPanel
+                    Orientation="Vertical"
+                    TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
+                    Margin="24,8,24,16">
+                                <TextBlock
+                    
+                    Text="Special characters are allowed in some Summoner Names depending on the selected language. If a special character is not utilized in the selected language, it will not be available to be used even if it is on a region that allows it."
+                    TextWrapping="Wrap" />
+                            </StackPanel>
+                        </Expander>
+
+                        <Border
+                    Background="{DynamicResource MaterialDesignDivider}"                
+                    Width="auto"
+                   Height="1"
+                    HorizontalAlignment="Stretch"
+                    SnapsToDevicePixels="True" />
+                        <Expander
+                HorizontalAlignment="Stretch"
+                Background="#FFF1F1F1"
+                Header="WHAT HAPPENS TO MY NAME IF I DON'T LOG IN FOR A LONG TIME??" Margin="0,0,33.2,0">
+                            <StackPanel
+                    Orientation="Vertical"
+                    TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
+                    Margin="24,8,24,16">
+                                <TextBlock
+                    
+                    Text="The rest of your account is perfectly safe if you don't log in for a long time (although your League standing will decay), but extended periods of inactivity can flag your Summoner Name. If your Summoner name is flagged for inactivity, another player can claim it if they purchase a Summoner name change."
+                    TextWrapping="Wrap" />
+                            </StackPanel>
+                        </Expander>
+
+                        <Border
+                    Background="{DynamicResource MaterialDesignDivider}"                
+                    Width="auto"
+                   Height="1"
+                    HorizontalAlignment="Stretch"
+                    SnapsToDevicePixels="True" />
+                        <Expander
+                HorizontalAlignment="Stretch"
+                Background="#FFF1F1F1"
+                Header="I HAVE MULTIPLE ACCOUNTS - CAN I SWAP THEIR SUMMONER NAMES?" Margin="0,0,33.2,0">
+                            <StackPanel
+                    Orientation="Vertical"
+                    TextBlock.Foreground="{DynamicResource MaterialDesignBody}"
+                    Margin="24,8,24,16">
+                                <TextBlock
+                    
+                    Text="We can swap Summoner Names between accounts manually, but only if you have the required 1300 RP or 13,900 BE in your main account (in this case, we mean the one at the highest level) to pay for the transfer. Please note that you can only swap Summoner Names that are on the same server. If you would like to swap your Summoner name from one of your accounts to another, please Submit a Ticket below  with the subject 'Summoner Name Swap' and send us the following information for both of your accounts:"
+                    TextWrapping="Wrap" />
+                                <TextBlock
+                    
+                    Text="SUBJECT: Summoner Name Swap"  
+                    TextWrapping="Wrap" />
+                                <TextBlock
+                    
+                    Text="ACCOUNT ONE"  
+                    TextWrapping="Wrap" />
+                                <ListView>
+                                    <ListViewItem>
+                                        - Your Riot Account name (What you log in to the game with)
+                                    </ListViewItem>
+                                    <ListViewItem>
+                                        - Your Summoner name (What other players see in game)
+                                    </ListViewItem>
+                                    <ListViewItem>
+                                        - Which server you play on (NA, EU West, or EU Nordic and East)
+                                    </ListViewItem>
+                                    <ListViewItem>
+                                        - Email used to register the account:
+                                    </ListViewItem>
+                                </ListView>
+                                <TextBlock
+                    
+                    Text="ACCOUNT TWO"  
+                    TextWrapping="Wrap" />
+                                <ListView>
+                                    <ListViewItem>
+                                        - Your Riot Account name (What you log in to the game with)
+                                    </ListViewItem>
+                                    <ListViewItem>
+                                        - Your Summoner name (What other players see in game)
+                                    </ListViewItem>
+                                    <ListViewItem>
+                                        - Which server you play on (NA, EU West, or EU Nordic and East)
+                                    </ListViewItem>
+                                    <ListViewItem>
+                                        - Which server you play on (NA, EU West, or EU Nordic and East)
+                                    </ListViewItem>
+                                </ListView>
+                            </StackPanel>
+                        </Expander>
+
+                    </StackPanel>
+                </Grid>
+            </ScrollViewer>
+        </DockPanel>
+    </Grid>
+</Window>

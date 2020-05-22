@@ -1,0 +1,333 @@
+﻿<Window x:Class="LeagueOfLegends.FriendsListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LeagueOfLegends"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="FriendsListWindow" Height="620" Width="600" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Window.Resources>
+        <!--Animatie uitschiuven menu-->
+        <Storyboard x:Key="KeyMenuOpen">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="GridMenu" Storyboard.TargetProperty="(FrameworkElement.Width)">
+                <EasingDoubleKeyFrame KeyTime="0" Value="60"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <!--Animatie terug treken menu-->
+        <Storyboard x:Key="KeyMenuClose">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="GridMenu" Storyboard.TargetProperty="(FrameworkElement.Width)">
+                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="60"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+
+    <Window.Triggers >
+        <!--Trigger van het openen menu-->
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="BtnOpenMenu">
+            <BeginStoryboard Storyboard="{StaticResource KeyMenuOpen}"/>
+        </EventTrigger>
+
+        <!--Triger sluiten van het menu-->
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="BtnCloseMenu">
+            <BeginStoryboard Storyboard="{StaticResource KeyMenuClose}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid Background="#FF26E409">
+
+        <DockPanel>
+            <Grid DockPanel.Dock="Left" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2" x:Name="GridMenu" Width="60" HorizontalAlignment="Left" Background="#FF077410" Margin="0,0,0,0.4">
+                <StackPanel>
+                    <Grid Height="61" Background="#FF077410" RenderTransformOrigin="0.491,0.536">
+                        <Button x:Name="BtnCloseMenu" Click="BtnCloseMenu_Click"  Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right">
+                            <materialDesign:PackIcon Foreground="White" Kind="ArrowLeft" Width="25" Height="25" VerticalAlignment="Top" HorizontalAlignment="Right" />
+                        </Button>
+
+                        <Button x:Name="BtnOpenMenu" Click="BtnOpenMenu_Click" Width="60" Height="60" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,1,0,0" >
+                            <materialDesign:PackIcon Background="#FF077410" Foreground="White" Kind="Menu" Width="25" Height="25" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+                        </Button>
+                    </Grid>
+
+                    <!--Knop1-->
+                    <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled"  Foreground="White">
+                        <ListViewItem Height="75">
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="BtnHomeIcon" Click="BtnHomeIcon_Click" Height="53" Width="53" Background="{x:Null}" BorderBrush="{x:Null}">
+                                    <materialDesign:PackIcon HorizontalAlignment="Center" Background="{x:Null}" Kind="House" Foreground="White" Width="24" Height="25" RenderTransformOrigin="0.422,0.494"/>
+                                </Button>
+                                <Button x:Name="BtnHomeText" Click="BtnHomeText_Click" Content="Home" Height="53" Width="139" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                            </StackPanel>
+                        </ListViewItem>
+
+                        <!--Knop2-->
+                        <ListViewItem Height="75">
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="BtnSkinStoreIcon" Click="BtnSkinStoreIcon_Click" Height="53" Width="53" Background="{x:Null}" BorderBrush="{x:Null}">
+                                    <materialDesign:PackIcon HorizontalAlignment="Center" Background="{x:Null}" Kind="Wardrobe" Foreground="White" Width="24" Height="25" RenderTransformOrigin="0.422,0.494"/>
+                                </Button>
+                                <Button x:Name="BtnSkinStoreText" Click="BtnSkinStoreText_Click" Content="Skin Store" Height="53" Width="139" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                            </StackPanel>
+                        </ListViewItem>
+
+                        <!--Knop 3-->
+                        <ListViewItem Height="75">
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="BtnChampionStoreIcon" Click="BtnChampionStoreIcon_Click" Height="53" Width="53" Background="{x:Null}" BorderBrush="{x:Null}">
+                                    <materialDesign:PackIcon HorizontalAlignment="Center" Background="{x:Null}" Kind="man" Foreground="White" Width="24" Height="25" RenderTransformOrigin="0.422,0.494"/>
+                                </Button>
+                                <Button x:Name="BtnChampionStoreText" Click="BtnChampionStoreText_Click" Content="Champion Store" Height="53" Width="139" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                            </StackPanel>
+                        </ListViewItem>
+
+                        <!--Knop 4-->
+                        <ListViewItem Height="75">
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="BtnFreinsListIcon" Click="BtnFreinsListIcon_Click" Height="53" Width="53" Background="{x:Null}" BorderBrush="{x:Null}">
+                                    <materialDesign:PackIcon HorizontalAlignment="Center" Background="{x:Null}" Kind="People" Foreground="White" Width="24" Height="25" RenderTransformOrigin="0.422,0.494"/>
+                                </Button>
+                                <Button x:Name="BtnFreindsText" Click="BtnFreindsText_Click" Content="Freind List" Height="53" Width="139" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                            </StackPanel>
+                        </ListViewItem>
+
+                        <!--Knop5-->
+                        <ListViewItem Height="75">
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="BtnPreBuildsIcon" Click="BtnPreBuildsIcon_Click" Height="53" Width="53" Background="{x:Null}" BorderBrush="{x:Null}">
+                                    <materialDesign:PackIcon HorizontalAlignment="Center" Background="{x:Null}" Kind="Build" Foreground="White" Width="24" Height="25" RenderTransformOrigin="0.422,0.494"/>
+                                </Button>
+                                <Button x:Name="BtnBrebuildsText" Click="BtnBrebuildsText_Click" Content="Pre Builds" Height="53" Width="139" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                            </StackPanel>
+                        </ListViewItem>
+
+                        <!--Knop6-->
+                        <ListViewItem Height="75">
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="BtnMatchHistoryIcon" Click="BtnMatchHistoryIcon_Click" Height="53" Width="53" Background="{x:Null}" BorderBrush="{x:Null}">
+                                    <materialDesign:PackIcon HorizontalAlignment="Center" Background="{x:Null}" Kind="History" Foreground="White" Width="24" Height="25" RenderTransformOrigin="0.422,0.494"/>
+                                </Button>
+                                <Button x:Name="BtnMatchHistoryText" Click="BtnMatchHistoryText_Click" Content="Match History" Height="53" Width="139" Background="{x:Null}" BorderBrush="{x:Null}"/>
+                            </StackPanel>
+                        </ListViewItem>
+                    </ListView>
+                </StackPanel>
+            </Grid>
+            <Grid DockPanel.Dock="Top" Height="60" VerticalAlignment="Top" Background="#FF26E409" Margin="0,0,5.6,0">
+                <TextBlock
+                    Text="Freind List" 
+                    FontSize="25"
+                    FontFamily="MV Boli"
+                    VerticalAlignment="Center"
+                    Width="auto"
+                    HorizontalAlignment="Center"/>
+                <StackPanel  VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Right">
+
+                    <materialDesign:PopupBox Margin="10" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False">
+                        <StackPanel Width="150">
+                            <Button x:Name="BtnFaq" Content="FAQ" Click="BtnFaq_Click"/>
+                            <Separator/>
+                            <Button x:Name="BtnLogOut" Click="BtnLogOut_Click" Content="Log Out" />
+                        </StackPanel>
+                    </materialDesign:PopupBox>
+                </StackPanel>
+            </Grid>
+            <ScrollViewer Background="White">
+
+                <Grid>
+
+                    <Grid Background="#FFF1F1F1"/>
+                    <StackPanel Grid.Column="0" Background="White">
+                        <TextBox Margin="20 10"
+                            Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                            materialDesign:HintAssist.Hint="SEARCH"
+                        Foreground="White"/>
+
+                        <!--De vriendenlijst-->
+                        <!--lettergroote nog aanpassen-->
+                        <ListView>
+
+                            <ListViewItem HorizontalAlignment="Stretch" Width="270">
+                                <Grid HorizontalAlignment="Center" Margin="5">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="42" />
+                                        <RowDefinition Height="42"/>
+                                        <RowDefinition Height="42"/>
+                                        <RowDefinition Height="42"/>
+                                        <RowDefinition Height="42"/>
+                                        <RowDefinition Height="42"/>
+                                        <RowDefinition Height="42"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50"/>
+                                        <ColumnDefinition Width="150"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <!--De code foor fototje en groene/rode bol-->
+                                    <Border Width="40" Height="40" Grid.Row="0" Grid.Column="0" CornerRadius="25" BorderBrush="Black" BorderThickness="0.6">
+                                        <Border.Background>
+                                            <ImageBrush/>
+                                        </Border.Background>
+                                    </Border>
+                                    <Border Width="10" Height="10" Grid.Row="0" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" CornerRadius="15" Background="Green" Margin="0,0,4.6,1.4"/>
+                                    <!--Code voor tekst naast profiel foto-->
+                                    <StackPanel Grid.Column="1">
+                                        <TextBlock
+                                            Foreground="Black"
+                                            Margin="10 0"
+                                            Text="Yuuki Konno"/>
+                                        <TextBlock
+                                            Foreground="Black"
+                                            Margin="10 0"
+                                            Opacity="0.6"
+                                            FontSize="11"
+                                            Text="Is online"
+                                            TextTrimming="CharacterEllipsis"/>
+                                    </StackPanel>
+
+
+                                    <!--De code foor fototje en groene/rode bol-->
+                                    <Border Width="40" Height="40" Grid.Row="1" Grid.Column="0" CornerRadius="25" BorderBrush="White" BorderThickness="0.6">
+                                        <Border.Background>
+                                            <ImageBrush/>
+                                        </Border.Background>
+                                    </Border>
+                                    <Border Width="10" Height="10" Grid.Row="1" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" CornerRadius="15" Background="Green" Margin="0,0,4.6,2.8"/>
+                                    <!--Code voor tekst naast profiel foto-->
+                                    <StackPanel Grid.Column="1" Grid.Row="1">
+                                        <TextBlock
+                                            Foreground="Wheat"
+                                            Margin="10 0"
+                                            Text="Dawn Daimond"/>
+                                        <TextBlock
+                                            Foreground="Wheat"
+                                            Margin="10 0"
+                                            Opacity="0.6"
+                                            FontSize="11"
+                                            Text="Is online"
+                                            TextTrimming="CharacterEllipsis"/>
+                                    </StackPanel>
+
+
+                                    <!--De code foor fototje en groene/rode bol-->
+                                    <Border Width="40" Height="40" Grid.Row="2" Grid.Column="0" CornerRadius="25" BorderBrush="White" BorderThickness="0.6">
+                                        <Border.Background>
+                                            <ImageBrush/>
+                                        </Border.Background>
+                                    </Border>
+                                    <Border Width="10" Height="10" Grid.Row="2" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" CornerRadius="15" Background="Green" Margin="0,0,4.6,2.8"/>
+                                    <!--Code voor tekst naast profiel foto-->
+                                    <StackPanel Grid.Column="1" Grid.Row="2">
+                                        <TextBlock
+                                            Foreground="Wheat"
+                                            Margin="10 0"
+                                            Text="Pyra Flame"/>
+                                        <TextBlock
+                                            Foreground="Wheat"
+                                            Margin="10 0"
+                                            Opacity="0.6"
+                                            FontSize="11"
+                                            Text="Is online"
+                                            TextTrimming="CharacterEllipsis"/>
+                                    </StackPanel>
+
+
+                                    <!--De code foor fototje en groene/rode bol-->
+                                    <Border Width="40" Height="40" Grid.Row="3" Grid.Column="0" CornerRadius="25" BorderBrush="White" BorderThickness="0.6">
+                                        <Border.Background>
+                                            <ImageBrush/>
+                                        </Border.Background>
+                                    </Border>
+                                    <Border Width="10" Height="10" Grid.Row="3" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" CornerRadius="15" Background="Green" Margin="0,0,4.6,2.8"/>
+                                    <!--Code voor tekst naast profiel foto-->
+                                    <StackPanel Grid.Column="1" Grid.Row="3">
+                                        <TextBlock
+                                            Foreground="Wheat"
+                                            Margin="10 0"
+                                            Text="Tifa Lockhart"/>
+                                        <TextBlock
+                                            Foreground="Wheat"
+                                            Margin="10 0"
+                                            Opacity="0.6"
+                                            FontSize="11"
+                                            Text="Is online"
+                                            TextTrimming="CharacterEllipsis"/>
+                                    </StackPanel>
+
+
+                                    <!--De code foor fototje en groene/rode bol-->
+                                    <Border Width="40" Height="40" Grid.Row="4" Grid.Column="0" CornerRadius="25" BorderBrush="White" BorderThickness="0.6">
+                                        <Border.Background>
+                                            <ImageBrush/>
+                                        </Border.Background>
+                                    </Border>
+                                    <Border Width="10" Height="10" Grid.Row="4" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" CornerRadius="15" Background="Green" Margin="0,0,4.6,2.8"/>
+                                    <!--Code voor tekst naast profiel foto-->
+                                    <StackPanel Grid.Column="1" Grid.Row="4">
+                                        <TextBlock
+                                            Foreground="Wheat"
+                                            Margin="10 0"
+                                            Text="Marin konoha"/>
+                                        <TextBlock
+                                            Foreground="Wheat"
+                                            Margin="10 0"
+                                            Opacity="0.6"
+                                            FontSize="11"
+                                         Text="Is online"
+                                            TextTrimming="CharacterEllipsis"/>
+                                    </StackPanel>
+
+
+                                    <!--De code foor fototje en groene/rode bol-->
+                                    <Border Width="40" Height="40" Grid.Row="5" Grid.Column="0" CornerRadius="25" BorderBrush="White" BorderThickness="0.6">
+                                        <Border.Background>
+                                            <ImageBrush/>
+                                        </Border.Background>
+                                    </Border>
+                                    <Border Width="10" Height="10" Grid.Row="5" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" CornerRadius="15" Background="Red" Margin="0,0,4.6,2.8"/>
+                                    <!--Code voor tekst naast profiel foto-->
+                                    <StackPanel Grid.Column="1" Grid.Row="5">
+                                        <TextBlock
+                                            Foreground="Wheat"
+                                            Margin="10 0"
+                                            Text="Princess Zelda"/>
+                                        <TextBlock
+                                            Foreground="Wheat"
+                                            Margin="10 0"
+                                            Opacity="0.6"
+                                            FontSize="11"
+                                            Text="Last online 1h ago"
+                                            TextTrimming="CharacterEllipsis"/>
+                                    </StackPanel>
+
+                                    <!--De code foor fototje en groene/rode bol-->
+                                    <Border Width="40" Height="40" Grid.Row="6" Grid.Column="0" CornerRadius="25" BorderBrush="White" BorderThickness="0.6">
+                                        <Border.Background>
+                                            <ImageBrush/>
+                                        </Border.Background>
+                                    </Border>
+                                    <Border Width="10" Height="10" Grid.Row="6" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Right" CornerRadius="15" Background="Green" Margin="0,0,4.6,2.8"/>
+                                    <!--Code voor tekst naast profiel foto-->
+                                    <StackPanel Grid.Column="1" Grid.Row="6">
+                                        <TextBlock
+                                            Foreground="Wheat"
+                                            Margin="10 0"
+                                            Text="Aiko Konno"/>
+                                        <TextBlock
+                                            Foreground="Wheat"
+                                            Margin="10 0"
+                                            Opacity="0.6"
+                                            FontSize="11"
+                                            Text="Is online"
+                                            TextTrimming="CharacterEllipsis"/>
+                                    </StackPanel>
+                                </Grid>
+                            </ListViewItem>
+                        </ListView>
+                    </StackPanel>
+                </Grid>
+            </ScrollViewer>
+        </DockPanel>
+    </Grid>
+</Window>
