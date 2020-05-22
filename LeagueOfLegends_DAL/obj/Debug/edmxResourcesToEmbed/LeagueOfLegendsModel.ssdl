@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Data_r0704742Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Aankoop">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StoreId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Champions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Naam" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="FreeToPlay" Type="bit" Nullable="false" />
+    <Property Name="StoreId" Type="int" />
+  </EntityType>
+  <EntityType Name="Friendship">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naam" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="SpelerId" Type="int" Nullable="false" />
+    <Property Name="Friendid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Gamemode">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Categorie" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Type" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Icons">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Naam" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="StoreId" Type="int" />
+    <Property Name="IconsId" Type="int" />
+  </EntityType>
+  <EntityType Name="Matchhistory">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Datum" Type="date" Nullable="false" />
+    <Property Name="Kills" Type="int" Nullable="false" />
+    <Property Name="Death" Type="int" Nullable="false" />
+    <Property Name="Assist" Type="int" Nullable="false" />
+    <Property Name="Itemset" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="gamemodeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Prijs">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BeginDatum" Type="datetime" Nullable="false" />
+    <Property Name="EindDatum" Type="datetime" Nullable="false" />
+    <Property Name="Prijs" Type="numeric" Precision="8" Scale="0" Nullable="false" />
+    <Property Name="StoreId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Profiel">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Rang" Type="varchar" MaxLength="255" />
+    <Property Name="Club" Type="varchar" MaxLength="255" />
+    <Property Name="Honor" Type="int" />
+    <Property Name="MasteryScore" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Skins">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Naam" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="StoreId" Type="int" />
+  </EntityType>
+  <EntityType Name="Speler">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Spelersnaam" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Spelerslevel" Type="int" Nullable="false" />
+    <Property Name="Spelersicoon" Type="varchar" MaxLength="255" />
+    <Property Name="SpelersBoodschap" Type="varchar" MaxLength="80" />
+    <Property Name="RiotPunten" Type="int" Nullable="false" />
+    <Property Name="BlueEssence" Type="int" Nullable="false" />
+    <Property Name="ProfielId" Type="int" Nullable="false" />
+    <Property Name="GamemodeId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Spelers_champions">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Naam" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="LevelMastery" Type="int" Nullable="false" />
+    <Property Name="FreeToPlay" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="SpelerId" Type="int" />
+    <Property Name="ChampionsId" Type="int" />
+  </EntityType>
+  <EntityType Name="Spelers_Icons">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Naam" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Jaarverkregen" Type="datetime" />
+    <Property Name="IconsId" Type="int" />
+    <Property Name="SpelerId" Type="int" />
+  </EntityType>
+  <EntityType Name="Spelers_Skins">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Naam" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="SkinsId" Type="int" />
+    <Property Name="SpelerId" Type="int" />
+  </EntityType>
+  <EntityType Name="Spelersaccount">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GebruikersNaam" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Wachtwoord" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Regio" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Geboortedatum" Type="date" Nullable="false" />
+    <Property Name="SpelerId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Orderdatum" Type="datetime" />
+  </EntityType>
+  <Association Name="FK_Aankoop_Store">
+    <End Role="Store" Type="Self.Store" Multiplicity="1" />
+    <End Role="Aankoop" Type="Self.Aankoop" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Aankoop">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Friendship_Friend">
+    <End Role="Speler" Type="Self.Speler" Multiplicity="1" />
+    <End Role="Friendship" Type="Self.Friendship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Speler">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Friendship">
+        <PropertyRef Name="Friendid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Friendship_Speler">
+    <End Role="Speler" Type="Self.Speler" Multiplicity="1" />
+    <End Role="Friendship" Type="Self.Friendship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Speler">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Friendship">
+        <PropertyRef Name="SpelerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Icons_Store">
+    <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+    <End Role="Icons" Type="Self.Icons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Icons">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Matchhistory_Gamemode">
+    <End Role="Gamemode" Type="Self.Gamemode" Multiplicity="1" />
+    <End Role="Matchhistory" Type="Self.Matchhistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gamemode">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Matchhistory">
+        <PropertyRef Name="gamemodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Prijs_Store">
+    <End Role="Store" Type="Self.Store" Multiplicity="1" />
+    <End Role="Prijs" Type="Self.Prijs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Prijs">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Skins_Store">
+    <End Role="Store" Type="Self.Store" Multiplicity="0..1" />
+    <End Role="Skins" Type="Self.Skins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Skins">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Speler_Gamemode">
+    <End Role="Gamemode" Type="Self.Gamemode" Multiplicity="1" />
+    <End Role="Speler" Type="Self.Speler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gamemode">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Speler">
+        <PropertyRef Name="GamemodeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Speler_Profiel">
+    <End Role="Profiel" Type="Self.Profiel" Multiplicity="1" />
+    <End Role="Speler" Type="Self.Speler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Profiel">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Speler">
+        <PropertyRef Name="ProfielId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Speleraccount_Speler">
+    <End Role="Speler" Type="Self.Speler" Multiplicity="1" />
+    <End Role="Spelersaccount" Type="Self.Spelersaccount" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Speler">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Spelersaccount">
+        <PropertyRef Name="SpelerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Spelers_champions_Champions">
+    <End Role="Champions" Type="Self.Champions" Multiplicity="0..1" />
+    <End Role="Spelers_champions" Type="Self.Spelers_champions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Champions">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Spelers_champions">
+        <PropertyRef Name="ChampionsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Spelers_champions_Speler">
+    <End Role="Speler" Type="Self.Speler" Multiplicity="0..1" />
+    <End Role="Spelers_champions" Type="Self.Spelers_champions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Speler">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Spelers_champions">
+        <PropertyRef Name="SpelerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Spelers_Icons_Icons">
+    <End Role="Icons" Type="Self.Icons" Multiplicity="0..1" />
+    <End Role="Spelers_Icons" Type="Self.Spelers_Icons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Icons">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Spelers_Icons">
+        <PropertyRef Name="IconsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Spelers_Icons_Speler">
+    <End Role="Speler" Type="Self.Speler" Multiplicity="0..1" />
+    <End Role="Spelers_Icons" Type="Self.Spelers_Icons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Speler">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Spelers_Icons">
+        <PropertyRef Name="SpelerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Spelers_Skins_Skins">
+    <End Role="Skins" Type="Self.Skins" Multiplicity="0..1" />
+    <End Role="Spelers_Skins" Type="Self.Spelers_Skins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skins">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Spelers_Skins">
+        <PropertyRef Name="SkinsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Spelers_Skins_Speler">
+    <End Role="Speler" Type="Self.Speler" Multiplicity="0..1" />
+    <End Role="Spelers_Skins" Type="Self.Spelers_Skins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Speler">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Spelers_Skins">
+        <PropertyRef Name="SpelerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Data_r0704742ModelStoreContainer">
+    <EntitySet Name="Aankoop" EntityType="Self.Aankoop" Schema="LoL" store:Type="Tables" />
+    <EntitySet Name="Champions" EntityType="Self.Champions" Schema="LoL" store:Type="Tables" />
+    <EntitySet Name="Friendship" EntityType="Self.Friendship" Schema="LoL" store:Type="Tables" />
+    <EntitySet Name="Gamemode" EntityType="Self.Gamemode" Schema="LoL" store:Type="Tables" />
+    <EntitySet Name="Icons" EntityType="Self.Icons" Schema="LoL" store:Type="Tables" />
+    <EntitySet Name="Matchhistory" EntityType="Self.Matchhistory" Schema="LoL" store:Type="Tables" />
+    <EntitySet Name="Prijs" EntityType="Self.Prijs" Schema="LoL" store:Type="Tables" />
+    <EntitySet Name="Profiel" EntityType="Self.Profiel" Schema="LoL" store:Type="Tables" />
+    <EntitySet Name="Skins" EntityType="Self.Skins" Schema="LoL" store:Type="Tables" />
+    <EntitySet Name="Speler" EntityType="Self.Speler" Schema="LoL" store:Type="Tables" />
+    <EntitySet Name="Spelers_champions" EntityType="Self.Spelers_champions" Schema="LoL" store:Type="Tables" />
+    <EntitySet Name="Spelers_Icons" EntityType="Self.Spelers_Icons" Schema="LoL" store:Type="Tables" />
+    <EntitySet Name="Spelers_Skins" EntityType="Self.Spelers_Skins" Schema="LoL" store:Type="Tables" />
+    <EntitySet Name="Spelersaccount" EntityType="Self.Spelersaccount" Schema="LoL" store:Type="Tables" />
+    <EntitySet Name="Store" EntityType="Self.Store" Schema="LoL" store:Type="Tables" />
+    <AssociationSet Name="FK_Aankoop_Store" Association="Self.FK_Aankoop_Store">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="Aankoop" EntitySet="Aankoop" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Friendship_Friend" Association="Self.FK_Friendship_Friend">
+      <End Role="Speler" EntitySet="Speler" />
+      <End Role="Friendship" EntitySet="Friendship" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Friendship_Speler" Association="Self.FK_Friendship_Speler">
+      <End Role="Speler" EntitySet="Speler" />
+      <End Role="Friendship" EntitySet="Friendship" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Icons_Store" Association="Self.FK_Icons_Store">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="Icons" EntitySet="Icons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Matchhistory_Gamemode" Association="Self.FK_Matchhistory_Gamemode">
+      <End Role="Gamemode" EntitySet="Gamemode" />
+      <End Role="Matchhistory" EntitySet="Matchhistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Prijs_Store" Association="Self.FK_Prijs_Store">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="Prijs" EntitySet="Prijs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Skins_Store" Association="Self.FK_Skins_Store">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="Skins" EntitySet="Skins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Speler_Gamemode" Association="Self.FK_Speler_Gamemode">
+      <End Role="Gamemode" EntitySet="Gamemode" />
+      <End Role="Speler" EntitySet="Speler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Speler_Profiel" Association="Self.FK_Speler_Profiel">
+      <End Role="Profiel" EntitySet="Profiel" />
+      <End Role="Speler" EntitySet="Speler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Speleraccount_Speler" Association="Self.FK_Speleraccount_Speler">
+      <End Role="Speler" EntitySet="Speler" />
+      <End Role="Spelersaccount" EntitySet="Spelersaccount" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Spelers_champions_Champions" Association="Self.FK_Spelers_champions_Champions">
+      <End Role="Champions" EntitySet="Champions" />
+      <End Role="Spelers_champions" EntitySet="Spelers_champions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Spelers_champions_Speler" Association="Self.FK_Spelers_champions_Speler">
+      <End Role="Speler" EntitySet="Speler" />
+      <End Role="Spelers_champions" EntitySet="Spelers_champions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Spelers_Icons_Icons" Association="Self.FK_Spelers_Icons_Icons">
+      <End Role="Icons" EntitySet="Icons" />
+      <End Role="Spelers_Icons" EntitySet="Spelers_Icons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Spelers_Icons_Speler" Association="Self.FK_Spelers_Icons_Speler">
+      <End Role="Speler" EntitySet="Speler" />
+      <End Role="Spelers_Icons" EntitySet="Spelers_Icons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Spelers_Skins_Skins" Association="Self.FK_Spelers_Skins_Skins">
+      <End Role="Skins" EntitySet="Skins" />
+      <End Role="Spelers_Skins" EntitySet="Spelers_Skins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Spelers_Skins_Speler" Association="Self.FK_Spelers_Skins_Speler">
+      <End Role="Speler" EntitySet="Speler" />
+      <End Role="Spelers_Skins" EntitySet="Spelers_Skins" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

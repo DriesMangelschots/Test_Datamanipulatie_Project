@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="eea03226115240238737fff3fe9516d0" Name="Diagram1">
+        <EntityTypeShape EntityType="Data_r0704742Model.Aankoop" Width="1.5" PointX="9" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Data_r0704742Model.Champion" Width="1.5" PointX="6" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Data_r0704742Model.Friendship" Width="1.5" PointX="8.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="Data_r0704742Model.Gamemode" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Data_r0704742Model.Icon" Width="1.5" PointX="9" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Data_r0704742Model.Matchhistory" Width="1.5" PointX="3" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Data_r0704742Model.Prijs" Width="1.5" PointX="9" PointY="23.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Data_r0704742Model.Profiel" Width="1.5" PointX="3.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Data_r0704742Model.Skin" Width="1.5" PointX="9" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Data_r0704742Model.Speler" Width="1.5" PointX="6" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Data_r0704742Model.Spelers_champion" Width="1.5" PointX="8.25" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Data_r0704742Model.Spelers_Icon" Width="1.5" PointX="11.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Data_r0704742Model.Spelers_Skin" Width="1.5" PointX="11.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Data_r0704742Model.Spelersaccount" Width="1.5" PointX="8.25" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Data_r0704742Model.Store" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="Data_r0704742Model.FK_Aankoop_Store" ManuallyRouted="false" />
+        <AssociationConnector Association="Data_r0704742Model.FK_Spelers_champions_Champions" ManuallyRouted="false" />
+        <AssociationConnector Association="Data_r0704742Model.FK_Friendship_Friend" ManuallyRouted="false" />
+        <AssociationConnector Association="Data_r0704742Model.FK_Friendship_Speler" ManuallyRouted="false" />
+        <AssociationConnector Association="Data_r0704742Model.FK_Matchhistory_Gamemode" ManuallyRouted="false" />
+        <AssociationConnector Association="Data_r0704742Model.FK_Speler_Gamemode" ManuallyRouted="false" />
+        <AssociationConnector Association="Data_r0704742Model.FK_Icons_Store" ManuallyRouted="false" />
+        <AssociationConnector Association="Data_r0704742Model.FK_Spelers_Icons_Icons" ManuallyRouted="false" />
+        <AssociationConnector Association="Data_r0704742Model.FK_Prijs_Store" ManuallyRouted="false" />
+        <AssociationConnector Association="Data_r0704742Model.FK_Speler_Profiel" ManuallyRouted="false" />
+        <AssociationConnector Association="Data_r0704742Model.FK_Skins_Store" ManuallyRouted="false" />
+        <AssociationConnector Association="Data_r0704742Model.FK_Spelers_Skins_Skins" ManuallyRouted="false" />
+        <AssociationConnector Association="Data_r0704742Model.FK_Speleraccount_Speler" ManuallyRouted="false" />
+        <AssociationConnector Association="Data_r0704742Model.FK_Spelers_champions_Speler" ManuallyRouted="false" />
+        <AssociationConnector Association="Data_r0704742Model.FK_Spelers_Icons_Speler" ManuallyRouted="false" />
+        <AssociationConnector Association="Data_r0704742Model.FK_Spelers_Skins_Speler" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

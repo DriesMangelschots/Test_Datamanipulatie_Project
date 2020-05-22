@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Data_r0704742ModelStoreContainer" CdmEntityContainer="Data_r0704742Entities">
+    <EntitySetMapping Name="Aankoop">
+      <EntityTypeMapping TypeName="Data_r0704742Model.Aankoop">
+        <MappingFragment StoreEntitySet="Aankoop">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Champions">
+      <EntityTypeMapping TypeName="Data_r0704742Model.Champion">
+        <MappingFragment StoreEntitySet="Champions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Naam" ColumnName="Naam" />
+          <ScalarProperty Name="FreeToPlay" ColumnName="FreeToPlay" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Friendship">
+      <EntityTypeMapping TypeName="Data_r0704742Model.Friendship">
+        <MappingFragment StoreEntitySet="Friendship">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="naam" ColumnName="naam" />
+          <ScalarProperty Name="SpelerId" ColumnName="SpelerId" />
+          <ScalarProperty Name="Friendid" ColumnName="Friendid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gamemode">
+      <EntityTypeMapping TypeName="Data_r0704742Model.Gamemode">
+        <MappingFragment StoreEntitySet="Gamemode">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Icons">
+      <EntityTypeMapping TypeName="Data_r0704742Model.Icon">
+        <MappingFragment StoreEntitySet="Icons">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Naam" ColumnName="Naam" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="IconsId" ColumnName="IconsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Matchhistory">
+      <EntityTypeMapping TypeName="Data_r0704742Model.Matchhistory">
+        <MappingFragment StoreEntitySet="Matchhistory">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Datum" ColumnName="Datum" />
+          <ScalarProperty Name="Kills" ColumnName="Kills" />
+          <ScalarProperty Name="Death" ColumnName="Death" />
+          <ScalarProperty Name="Assist" ColumnName="Assist" />
+          <ScalarProperty Name="Itemset" ColumnName="Itemset" />
+          <ScalarProperty Name="gamemodeId" ColumnName="gamemodeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prijs">
+      <EntityTypeMapping TypeName="Data_r0704742Model.Prijs">
+        <MappingFragment StoreEntitySet="Prijs">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="BeginDatum" ColumnName="BeginDatum" />
+          <ScalarProperty Name="EindDatum" ColumnName="EindDatum" />
+          <ScalarProperty Name="Prijs1" ColumnName="Prijs" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Profiel">
+      <EntityTypeMapping TypeName="Data_r0704742Model.Profiel">
+        <MappingFragment StoreEntitySet="Profiel">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Rang" ColumnName="Rang" />
+          <ScalarProperty Name="Club" ColumnName="Club" />
+          <ScalarProperty Name="Honor" ColumnName="Honor" />
+          <ScalarProperty Name="MasteryScore" ColumnName="MasteryScore" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Skins">
+      <EntityTypeMapping TypeName="Data_r0704742Model.Skin">
+        <MappingFragment StoreEntitySet="Skins">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Naam" ColumnName="Naam" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Speler">
+      <EntityTypeMapping TypeName="Data_r0704742Model.Speler">
+        <MappingFragment StoreEntitySet="Speler">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Spelersnaam" ColumnName="Spelersnaam" />
+          <ScalarProperty Name="Spelerslevel" ColumnName="Spelerslevel" />
+          <ScalarProperty Name="Spelersicoon" ColumnName="Spelersicoon" />
+          <ScalarProperty Name="SpelersBoodschap" ColumnName="SpelersBoodschap" />
+          <ScalarProperty Name="RiotPunten" ColumnName="RiotPunten" />
+          <ScalarProperty Name="BlueEssence" ColumnName="BlueEssence" />
+          <ScalarProperty Name="ProfielId" ColumnName="ProfielId" />
+          <ScalarProperty Name="GamemodeId" ColumnName="GamemodeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Spelers_champions">
+      <EntityTypeMapping TypeName="Data_r0704742Model.Spelers_champion">
+        <MappingFragment StoreEntitySet="Spelers_champions">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Naam" ColumnName="Naam" />
+          <ScalarProperty Name="LevelMastery" ColumnName="LevelMastery" />
+          <ScalarProperty Name="FreeToPlay" ColumnName="FreeToPlay" />
+          <ScalarProperty Name="SpelerId" ColumnName="SpelerId" />
+          <ScalarProperty Name="ChampionsId" ColumnName="ChampionsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Spelers_Icons">
+      <EntityTypeMapping TypeName="Data_r0704742Model.Spelers_Icon">
+        <MappingFragment StoreEntitySet="Spelers_Icons">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Naam" ColumnName="Naam" />
+          <ScalarProperty Name="Jaarverkregen" ColumnName="Jaarverkregen" />
+          <ScalarProperty Name="IconsId" ColumnName="IconsId" />
+          <ScalarProperty Name="SpelerId" ColumnName="SpelerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Spelers_Skins">
+      <EntityTypeMapping TypeName="Data_r0704742Model.Spelers_Skin">
+        <MappingFragment StoreEntitySet="Spelers_Skins">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Naam" ColumnName="Naam" />
+          <ScalarProperty Name="SkinsId" ColumnName="SkinsId" />
+          <ScalarProperty Name="SpelerId" ColumnName="SpelerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Spelersaccount">
+      <EntityTypeMapping TypeName="Data_r0704742Model.Spelersaccount">
+        <MappingFragment StoreEntitySet="Spelersaccount">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="GebruikersNaam" ColumnName="GebruikersNaam" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Wachtwoord" ColumnName="Wachtwoord" />
+          <ScalarProperty Name="Regio" ColumnName="Regio" />
+          <ScalarProperty Name="Geboortedatum" ColumnName="Geboortedatum" />
+          <ScalarProperty Name="SpelerId" ColumnName="SpelerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Store">
+      <EntityTypeMapping TypeName="Data_r0704742Model.Store">
+        <MappingFragment StoreEntitySet="Store">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Orderdatum" ColumnName="Orderdatum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
