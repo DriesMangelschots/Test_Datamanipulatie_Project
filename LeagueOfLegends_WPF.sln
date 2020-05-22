@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.352
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeagueOfLegends_WPF", "LeagueOfLegends\LeagueOfLegends_WPF.csproj", "{DE3D0DE1-639F-4578-B876-141BF791AACA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeagueOfLegends_Moddels", "LeagueOfLegends_Moddels\LeagueOfLegends_Moddels.csproj", "{BCD72E13-C814-4380-B9FE-92CF8DC73813}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeagueOfLegends_DAL", "LeagueOfLegends_DAL\LeagueOfLegends_DAL.csproj", "{FDBB4755-1836-49E8-BDE9-CD10B5877043}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE3D0DE1-639F-4578-B876-141BF791AACA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE3D0DE1-639F-4578-B876-141BF791AACA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE3D0DE1-639F-4578-B876-141BF791AACA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE3D0DE1-639F-4578-B876-141BF791AACA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCD72E13-C814-4380-B9FE-92CF8DC73813}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCD72E13-C814-4380-B9FE-92CF8DC73813}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCD72E13-C814-4380-B9FE-92CF8DC73813}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCD72E13-C814-4380-B9FE-92CF8DC73813}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDBB4755-1836-49E8-BDE9-CD10B5877043}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDBB4755-1836-49E8-BDE9-CD10B5877043}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDBB4755-1836-49E8-BDE9-CD10B5877043}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDBB4755-1836-49E8-BDE9-CD10B5877043}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6EBD9A57-2145-4B26-BCBC-E1F3EC2ABB45}
+	EndGlobalSection
+EndGlobal
